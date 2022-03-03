@@ -1,6 +1,8 @@
 {
-  "name": "openapi-to-graphql-root",
-  "private": true,
+  "name": "openapi-to-graphql",
+  "version": "2.6.3",
+  "description": "Generates a GraphQL schema for a given OpenAPI Specification (OAS)",
+  "copyright.owner": "IBM Corp.",
   "scripts": {
     "transpile-ts": "tsc --project tsconfig.build.json",
     "build": "yarn transpile-ts && bob build",
@@ -18,8 +20,46 @@
       "./packages/*"
     ]
   },
+  "dependencies": {
+    "cross-fetch": "^3.1.4",
+    "debug": "^4.2.0",
+    "deep-equal": "^2.0.5",
+    "form-data": "^4.0.0",
+    "form-urlencoded": "^6.0.4",
+    "graphql-scalars": "^1.10.0",
+    "graphql-subscriptions": "^1.1.0",
+    "graphql-upload": "^13.0.0",
+    "json-ptr": "^2.2.0",
+    "jsonpath-plus": "^6.0.1",
+    "jsonpointer": "^5.0.0",
+    "oas-validator": "^5.0.2",
+    "pluralize": "^8.0.0",
+    "swagger2openapi": "^7.0.2",
+    "tslib": "^2.3.0",
+    "url-join": "4.0.1",
+    "ws": "^7.5.3"
+  },
+  "peerDependencies": {
+    "graphql": "^14.0.0 || ^15.0.0"
+  },
   "devDependencies": {
     "bob-the-bundler": "^1.4.1",
     "typescript": "^4.3.4"
+  },
+  "main": "packages/openapi-to-graphl/dist/index.js",
+  "module": "packages/openapi-to-graphl/dist/index.mjs",
+  "typings": "packages/openapi-to-graphl/dist/index.d.ts",
+  "typescript": {
+    "definition": "packages/openapi-to-graphl/dist/index.d.ts"
+  },
+  "exports": {
+    ".": {
+      "require": "./packages/openapi-to-graphl/dist/index.js",
+      "import": "./packages/openapi-to-graphl/dist/index.mjs"
+    },
+    "./*": {
+      "require": "./packages/openapi-to-graphl/dist/*.js",
+      "import": "./packages/openapi-to-graphl/dist/*.mjs"
+    }
   }
 }
