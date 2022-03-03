@@ -4,10 +4,10 @@
   "description": "Generates a GraphQL schema for a given OpenAPI Specification (OAS)",
   "copyright.owner": "IBM Corp.",
   "scripts": {
-    "transpile-ts": "tsc --project tsconfig.build.json",
+    "transpile-ts": "tsc --project tsconfig.build.json && bob build",
     "build": "yarn transpile-ts",
     "test": "cd packages/openapi-to-graphql/ && npm test",
-    "postinstall": "yarn install --ignore-scripts && yarn build"
+    "postinstall": "yarn install --ignore-scripts && cd packages/openapi-to-graphql-cli && yarn install && cd ../.. && yarn build"
   },
   "engines": {
     "node": ">=8"
@@ -42,20 +42,20 @@
     "bob-the-bundler": "^1.4.1",
     "typescript": "^4.3.4"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "typings": "dist/index.d.ts",
+  "main": "dist/openapi-to-graphql/src/index.js",
+  "module": "dist/openapi-to-graphql/src/index.mjs",
+  "typings": "dist/openapi-to-graphql/src/index.d.ts",
   "typescript": {
-    "definition": "dist/index.d.ts"
+    "definition": "dist/openapi-to-graphql/src/index.d.ts"
   },
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "require": "./dist/openapi-to-graphql/src/index.js",
+      "import": "./dist/openapi-to-graphql/src/index.mjs"
     },
     "./*": {
-      "require": "./dist/*.js",
-      "import": "./dist/*.mjs"
+      "require": "./dist/openapi-to-graphql/src/*.js",
+      "import": "./dist/openapi-to-graphql/src/*.mjs"
     }
   }
 }
