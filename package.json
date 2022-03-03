@@ -6,7 +6,8 @@
   "scripts": {
     "transpile-ts": "tsc --project tsconfig.build.json",
     "build": "yarn transpile-ts && bob build",
-    "test": "cd packages/openapi-to-graphql/ && npm test"
+    "test": "cd packages/openapi-to-graphql/ && npm test",
+    "postinstall": "yarn build"
   },
   "engines": {
     "node": ">=8"
@@ -46,20 +47,20 @@
     "bob-the-bundler": "^1.4.1",
     "typescript": "^4.3.4"
   },
-  "main": "packages/openapi-to-graphl/dist/index.js",
-  "module": "packages/openapi-to-graphl/dist/index.mjs",
-  "typings": "packages/openapi-to-graphl/dist/index.d.ts",
+  "main": "packages/openapi-to-graphql/dist/index.js",
+  "module": "packages/openapi-to-graphql/dist/index.mjs",
+  "typings": "packages/openapi-to-graphql/dist/index.d.ts",
   "typescript": {
-    "definition": "packages/openapi-to-graphl/dist/index.d.ts"
+    "definition": "packages/openapi-to-graphql/dist/index.d.ts"
   },
   "exports": {
     ".": {
-      "require": "./packages/openapi-to-graphl/dist/index.js",
-      "import": "./packages/openapi-to-graphl/dist/index.mjs"
+      "require": "./packages/openapi-to-graphql/dist/index.js",
+      "import": "./packages/openapi-to-graphql/dist/index.mjs"
     },
     "./*": {
-      "require": "./packages/openapi-to-graphl/dist/*.js",
-      "import": "./packages/openapi-to-graphl/dist/*.mjs"
+      "require": "./packages/openapi-to-graphql/dist/*.js",
+      "import": "./packages/openapi-to-graphql/dist/*.mjs"
     }
   }
 }
