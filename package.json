@@ -7,7 +7,7 @@
     "transpile-ts": "tsc --project tsconfig.build.json && bob build",
     "build": "yarn transpile-ts",
     "test": "cd packages/openapi-to-graphql/ && npm test",
-    "postinstall": "yarn install --ignore-scripts && cd packages/openapi-to-graphql-cli && yarn install && cd ../../packages/openapi-to-graphql && yarn install && cd ../.. && yarn build"
+    "postinstall": "yarn install --ignore-scripts && cd packages/openapi-to-graphql && yarn install && cd ../.. && yarn build"
   },
   "engines": {
     "node": ">=8"
