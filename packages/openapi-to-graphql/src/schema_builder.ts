@@ -225,7 +225,7 @@ export function getGraphQLType<TSource, TContext, TArgs>({
       return def.graphQLType
 
     case TargetGraphQLType.upload:
-      def.graphQLType = GraphQLUpload
+      def.graphQLType = GraphQLUpload as any
       return def.graphQLType
   }
 }
